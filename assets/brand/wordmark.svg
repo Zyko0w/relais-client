@@ -1,0 +1,21 @@
+<svg width="760" height="200" viewBox="0 0 760 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="20" y1="20" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Marque -->
+  <g transform="translate(20 20)">
+    <rect width="160" height="160" rx="40" fill="url(#bg)"/>
+    <g transform="translate(80 78) scale(0.145) translate(-512 -470)">
+      <path d="M296 250 h432 a104 104 0 0 1 104 104 v232 a104 104 0 0 1 -104 104 H470 l-110 96 v-96 h-64 a104 104 0 0 1 -104 -104 V354 a104 104 0 0 1 104 -104 Z" fill="#FFFFFF"/>
+      <path d="M360 442 H560 V414 L690 470 L560 526 V498 H360 Z" fill="#2563EB"/>
+    </g>
+  </g>
+
+  <!-- Texte -->
+  <text x="210" y="118" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="68" font-weight="800" fill="#0F172A">Relais</text>
+  <text x="438" y="118" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="68" font-weight="500" fill="#2563EB">Client</text>
+</svg>

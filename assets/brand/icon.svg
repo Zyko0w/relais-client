@@ -1,0 +1,22 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="140" y1="120" x2="900" y2="940" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="0.55" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="arrow" x1="360" y1="414" x2="690" y2="526" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fond : badge arrondi dégradé indigo -> bleu -->
+  <rect width="1024" height="1024" rx="232" fill="url(#bg)"/>
+
+  <!-- Bulle de message (blanche) avec ergot bas-gauche -->
+  <path d="M296 250 h432 a104 104 0 0 1 104 104 v232 a104 104 0 0 1 -104 104 H470 l-110 96 v-96 h-64 a104 104 0 0 1 -104 -104 V354 a104 104 0 0 1 104 -104 Z" fill="#FFFFFF"/>
+
+  <!-- Flèche "relais / transfert" -->
+  <path d="M360 442 H560 V414 L690 470 L560 526 V498 H360 Z" fill="url(#arrow)"/>
+</svg>

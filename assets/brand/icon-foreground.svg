@@ -1,0 +1,14 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Foreground d'icône adaptative Android : marque seule, centrée dans la
+       zone de sécurité (~66%), fond transparent (le fond est fourni à part). -->
+  <defs>
+    <linearGradient id="arrow" x1="430" y1="454" x2="664" y2="534" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(512 512) scale(0.62) translate(-512 -470)">
+    <path d="M296 250 h432 a104 104 0 0 1 104 104 v232 a104 104 0 0 1 -104 104 H470 l-110 96 v-96 h-64 a104 104 0 0 1 -104 -104 V354 a104 104 0 0 1 104 -104 Z" fill="#FFFFFF"/>
+    <path d="M360 442 H560 V414 L690 470 L560 526 V498 H360 Z" fill="url(#arrow)"/>
+  </g>
+</svg>

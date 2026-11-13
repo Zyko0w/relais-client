@@ -1,0 +1,40 @@
+{
+  "name": "relais-client",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "expo": "~58.0.24",
+    "expo-build-properties": "~58.0.12",
+    "expo-clipboard": "~58.0.4",
+    "expo-constants": "~58.0.16",
+    "expo-dev-client": "~58.0.19",
+    "expo-file-system": "~58.0.13",
+    "expo-image-manipulator": "~58.0.16",
+    "expo-image-picker": "~58.0.10",
+    "expo-linear-gradient": "~58.0.4",
+    "expo-mail-composer": "~58.0.4",
+    "expo-share-intent": "^9.0.0",
+    "expo-sharing": "~58.0.23",
+    "expo-status-bar": "~58.0.5",
+    "lucide-react-native": "^1.72.0",
+    "react": "19.3.0",
+    "react-native": "0.88.1",
+    "react-native-safe-area-context": "~5.11.1",
+    "react-native-svg": "15.16.0"
+  },
+  "devDependencies": {
+    "@types/react": "~19.3.0",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "build:apk": "eas build -p android --profile preview",
+    "build:dev": "eas build -p android --profile development",
+    "typecheck": "tsc --noEmit"
+  },
+  "private": true
+}

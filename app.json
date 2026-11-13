@@ -1,0 +1,73 @@
+{
+  "expo": {
+    "name": "Relais Client",
+    "slug": "relais-client",
+    "scheme": "relaisclient",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.relaisclient.app"
+    },
+    "android": {
+      "package": "com.relaisclient.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#2563EB",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "android.permission.READ_SMS",
+        "android.permission.READ_CONTACTS",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      [
+        "expo-share-intent",
+        {
+          "androidIntentFilters": [
+            "text/*",
+            "image/*"
+          ],
+          "androidMultiIntentFilters": [
+            "image/*"
+          ],
+          "disableIOS": true
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "L'appli accède à vos photos pour importer les images envoyées par vos clients.",
+          "cameraPermission": "L'appli utilise l'appareil photo pour photographier un document client."
+        }
+      ],
+      "expo-mail-composer",
+      "expo-sharing",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableMinifyInReleaseBuilds": false,
+            "enableShrinkResourcesInReleaseBuilds": false
+          }
+        }
+      ]
+    ],
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "940b042d-128e-4f0c-89d3-7fe52fa7ce0b"
+      }
+    },
+    "owner": "zzyk0"
+  }
+}
