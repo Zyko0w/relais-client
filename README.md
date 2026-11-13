@@ -1,94 +1,76 @@
-# Relais Client 📨
+<p align="center">
+  <img src="assets/brand/icon.svg" width="120" alt="Logo Relais Client">
+</p>
 
-Application Android (Expo SDK 58 / React Native 0.88) pour récupérer les messages et images envoyés par un client,
-**extraire le texte des images (OCR)** et **transférer le tout par e-mail** (ou autre) pour l'avoir sur son PC.
+<h1 align="center">Relais Client</h1>
+
+<p align="center">
+  Récupère les messages et images envoyés par tes clients sur ton téléphone,<br>
+  extrais le texte des images et retrouve tout sur ton PC en un envoi.
+</p>
+
+<p align="center">
+  <img alt="Android" src="https://img.shields.io/badge/Android-APK-3DDC84?logo=android&logoColor=white">
+  <img alt="Expo SDK 58" src="https://img.shields.io/badge/Expo-SDK%2058-000020?logo=expo&logoColor=white">
+  <img alt="React Native" src="https://img.shields.io/badge/React%20Native-0.88-61DAFB?logo=react&logoColor=black">
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white">
+  <img alt="Licence MIT" src="https://img.shields.io/badge/licence-MIT-blue">
+</p>
+
+---
+
+## Présentation
+
+Tes clients t'envoient des captures, des photos de documents et des messages sur WhatsApp ou par SMS, mais c'est sur
+ton PC que tu travailles. Relais Client rassemble tout au même endroit, lit le texte des images (OCR) et te
+l'envoie par e-mail, prêt à copier-coller.
 
 ## Fonctionnalités
 
-| Fonction | Expo Go | APK (EAS) |
-|---|:-:|:-:|
-| Recevoir une image/un texte via **Partager** depuis WhatsApp, Messages, Galerie… (plusieurs images possibles) | ❌ | ✅ |
-| Lire directement les **SMS et MMS** reçus (filtre par période et par numéro, nom du contact) | ❌ | ✅ |
-| Ajouter une image (galerie / appareil photo), coller depuis le presse-papier, saisir un texte | ✅ | ✅ |
-| **OCR** sur le téléphone (Google ML Kit, hors ligne, gratuit) | ❌ | ✅ |
-| OCR en ligne (OCR.space), utilisé automatiquement si l'OCR sur le téléphone n'est pas dispo | ✅ | ✅ |
-| Filtre **par période** : 15 min, **1 h**, 3 h, aujourd'hui, 24 h, 7 jours, tout, perso (X min/h/jours) | ✅ | ✅ |
-| Filtre « non envoyés » et par client | ✅ | ✅ |
-| **Envoi par e-mail** (texte du message + texte extrait + images en pièces jointes) | ✅ | ✅ |
-| Partager vers une autre appli, exporter en `.txt`, copier | ✅ | ✅ |
-| Texte extrait modifiable, ré-extraction, historique « envoyé le… », nettoyage auto | ✅ | ✅ |
+### 📥 Récupérer
+- **Partager vers Relais Client** depuis WhatsApp, Messages, la Galerie… (plusieurs images à la fois).
+- **Lecture directe des SMS et MMS** reçus, filtrés par période et par numéro, avec le nom du contact.
+- Ajout depuis la galerie, l'appareil photo, le presse-papier ou en saisie libre.
 
-## 1. Installer
+### 🔍 Extraire le texte
+- **OCR sur le téléphone** avec Google ML Kit : hors ligne, gratuit, rapide.
+- OCR en ligne (OCR.space) en secours.
+- Texte extrait modifiable et ré-extraction possible.
 
-```bash
-npm install
-```
+### 🗂️ Trier
+- Filtres **par période** : 15 min, 1 h, 3 h, aujourd'hui, 24 h, 7 jours, tout ou durée perso.
+- Filtre « non envoyés » et filtre par client.
+- Historique « envoyé le… » et nettoyage automatique.
 
-## 2. Tester avec Expo Go
+### 📤 Envoyer
+- **Envoi par e-mail** : texte du message, texte extrait et images en pièces jointes.
+- Objet personnalisable (`{client}`, `{date}`, `{nombre}`) et adresse par défaut.
+- Partage vers une autre appli, export en `.txt` ou simple copie.
 
-1. Installez **Expo Go** (à jour, compatible SDK 58) depuis le Play Store.
-2. Lancez :
-   ```bash
-   npx expo start
-   ```
-3. Scannez le QR code avec Expo Go (même Wi‑Fi ; sinon `npx expo start --tunnel`).
-
-Dans Expo Go, le partage depuis d'autres applis, la lecture des SMS et l'OCR hors ligne sont désactivés
-(ils demandent du code natif). Un bandeau l'indique dans l'appli. Tout le reste fonctionne.
-
-## 3. Construire l'APK avec EAS Build
-
-```bash
-npm install -g eas-cli
-eas login              # compte Expo gratuit
-eas init               # relie le projet à votre compte (ajoute projectId dans app.json)
-eas build -p android --profile preview
-```
-
-À la fin, EAS donne un lien/QR code pour télécharger l'**APK** à installer sur le téléphone.
-
-Autres profils (`eas.json`) :
-- `development` : APK de développement (avec `expo-dev-client`) pour tester les fonctions natives
-  avec rechargement à chaud : `eas build -p android --profile development` puis `npx expo start --dev-client`.
-- `production` : `.aab` pour le Play Store.
-
-> Vous pouvez changer le nom du paquet `com.relaisclient.app` dans `app.json` avant le premier build.
-
-### ⚠️ Android récent : autoriser la lecture des SMS sur un APK installé à la main
-
-Android bloque la permission SMS pour les applis installées hors Play Store (« paramètre restreint »).
-Si la demande d'accès aux SMS ne s'affiche pas ou est grisée :
-**Paramètres → Applications → Relais Client → ⋮ (en haut à droite) → Autoriser les paramètres restreints**,
-puis réessayez dans l'onglet SMS.
-
-## Utilisation
-
-- **Depuis WhatsApp / Messages** : appui long sur l'image (ou le message) → **Partager** → **Relais Client**.
-  Le message est ajouté et le texte de l'image est extrait automatiquement. Renseignez le nom du client si besoin.
-- **Onglet SMS** : choisissez la période (ex. *1 h*), éventuellement le numéro du client, puis **Charger les SMS**
-  → **Importer + envoyer**.
-- **Onglet Messages** : choisissez la période, cochez des messages (ou rien = toute la période) → **Envoyer**.
-- **Réglages** : adresse e-mail par défaut, objet (`{client}`, `{date}`, `{nombre}`), contenu par défaut,
-  moteur OCR, clé OCR.space, nettoyage automatique.
-
-## Limites à connaître
-
-- Android ne permet à aucune appli de lire les conversations **WhatsApp** ni les messages **RCS** (« Chat » de Google Messages) :
-  pour ceux-là, utilisez **Partager**.
-- La permission `READ_SMS` est réservée par Google aux applis SMS par défaut sur le **Play Store**. Pour un APK
-  installé directement, aucun problème. Pour une publication Play Store, retirez la lecture SMS
-  (partage + presse-papier restent dispo).
-- La clé OCR.space `helloworld` est une clé de démo limitée : créez une clé gratuite sur https://ocr.space/ocrapi
-  si vous utilisez l'OCR en ligne. Avec l'APK, l'OCR se fait sur le téléphone, sans internet.
-
-## Structure
+## Aperçu du fonctionnement
 
 ```
-App.tsx                        navigation (onglets), réception des partages
-src/store.tsx                  données (AsyncStorage), file d'attente OCR
-src/ocr.ts                     OCR ML Kit (natif) / OCR.space (en ligne)
-src/periods.ts                 filtres de période
-src/exportText.ts              mise en forme du mail
-src/screens/                   Messages, SMS, Réglages, Détail, Nouveau, Envoi
-modules/relais-native/         module natif Kotlin : lecture SMS/MMS + OCR ML Kit
+ WhatsApp / SMS / Galerie  ──►  Relais Client  ──►  OCR (ML Kit)  ──►  E-mail vers ton PC
 ```
+
+1. Appui long sur une image ou un message → **Partager** → **Relais Client** (ou import depuis l'onglet SMS).
+2. Le texte des images est extrait automatiquement.
+3. Choisis la période, coche les messages, **Envoyer**.
+
+## Stack technique
+
+| Partie | Techno |
+|---|---|
+| App | Expo SDK 58, React Native 0.88, TypeScript |
+| Module natif | Kotlin : lecture SMS/MMS et OCR Google ML Kit |
+| Stockage | AsyncStorage (tout reste sur le téléphone) |
+| Build | EAS Build (APK) |
+
+## Installation
+
+Installation des dépendances, test dans Expo Go, construction de l'APK avec EAS et autorisation des SMS sur
+Android récent : tout est détaillé dans **[INSTALLATION.md](INSTALLATION.md)**.
+
+## Licence
+
+Distribué sous licence [MIT](LICENSE).
